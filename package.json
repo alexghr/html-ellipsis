@@ -1,0 +1,25 @@
+{
+  "name": "html-truncate",
+  "version": "0.1.0",
+  "description": "truncates a html string without messing up the tags",
+  "main": "src/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/alexghr/html-truncate.git"
+  },
+  "keywords": [
+    "truncate",
+    "html",
+    "ellipsis",
+    "ellipsize"
+  ],
+  "author": "Alex Gherghisan <alex.gherghisan@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/alexghr/html-truncate/issues"
+  },
+  "homepage": "https://github.com/alexghr/html-truncate"
+}
