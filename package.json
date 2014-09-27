@@ -2,7 +2,7 @@
   "name": "html-truncate",
   "version": "0.1.0",
   "description": "truncates a html string without messing up the tags",
-  "main": "src/index.js",
+  "main": "html-truncate.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
