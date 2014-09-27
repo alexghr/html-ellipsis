@@ -13,7 +13,7 @@
 
 	return function(html, maxLength, opt_addEllipsis) {
 		var len = html.length;
-		if (len < maxLength) {
+		if (len <= maxLength) {
 			return html; 
 		}
 
