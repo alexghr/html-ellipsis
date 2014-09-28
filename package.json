@@ -4,7 +4,8 @@
   "description": "truncates a html string without messing up the tags",
   "main": "html-truncate.js",
   "scripts": {
-    "test": "node test/truncate.js"
+    "test": "node test/truncate.js",
+    "lint": "node ./node_modules/.bin/jshint html-truncate.js"
   },
   "repository": {
     "type": "git",
@@ -23,6 +24,7 @@
   },
   "homepage": "https://github.com/alexghr/html-truncate",
   "devDependencies": {
+    "jshint": "^2.5.6",
     "tape": "^3.0.0"
   }
 }

@@ -1,0 +1,12 @@
+{
+	"browser": true,
+	"node": true,
+	"strict": true,
+	"curly": true,
+	"eqeqeq": true,
+	"asi": false,
+	"latedef": true,
+	"unused": true,
+	"undef": true,
+	"predef": ["define", "module"]
+}
