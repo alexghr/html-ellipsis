@@ -1,7 +1,7 @@
 /**
- * @module html-truncate
+ * @module html-ellipsis
  * @version 1.0.0
- * @exports htmlTruncate
+ * @exports htmlEllipsis
  *
  * @copyright 2014 Alex Gherghisan
  * @license MIT
@@ -15,7 +15,7 @@
 	} else if (typeof exports !== 'undefined') {
 		module.exports = factory();
 	} else {
-		root.htmlTruncate = factory();
+		root.htmlEllipsis = factory();
 	}
 }(this, function factory() {
 	'use strict';
@@ -30,7 +30,7 @@
 	 *
 	 * @returns {string}
 	 */
-	return function htmlTruncate(html, maxLength, opt_addEllipsis) {
+	return function htmlEllipsis(html, maxLength, opt_addEllipsis) {
 		var len = html.length;
 		if (len <= maxLength) {
 			return html; 

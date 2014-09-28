@@ -1,15 +1,15 @@
 {
-  "name": "html-truncate",
+  "name": "html-ellipsis",
   "version": "1.0.0",
   "description": "truncates a html string without messing up the tags",
-  "main": "html-truncate.js",
+  "main": "html-ellipsis.js",
   "scripts": {
     "test": "node test/truncate.js",
-    "lint": "node ./node_modules/.bin/jshint html-truncate.js"
+    "lint": "node ./node_modules/.bin/jshint html-ellipsis.js"
   },
   "repository": {
     "type": "git",
-    "url": "git://github.com/alexghr/html-truncate.git"
+    "url": "git://github.com/alexghr/html-ellipsis.git"
   },
   "keywords": [
     "truncate",
@@ -20,9 +20,9 @@
   "author": "Alex Gherghisan <alex.gherghisan@gmail.com>",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/alexghr/html-truncate/issues"
+    "url": "https://github.com/alexghr/html-ellipsis/issues"
   },
-  "homepage": "https://github.com/alexghr/html-truncate",
+  "homepage": "https://github.com/alexghr/html-ellipsis",
   "devDependencies": {
     "jshint": "^2.5.6",
     "tape": "^3.0.0"

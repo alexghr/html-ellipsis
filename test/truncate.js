@@ -1,5 +1,5 @@
 var test = require('tape');
-var truncate = require('../html-truncate');
+var truncate = require('../html-ellipsis');
 
 // sample strings
 var text = "1234567890"; // length = 10
