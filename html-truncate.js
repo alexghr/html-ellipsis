@@ -1,5 +1,10 @@
-// (c) 2014 Alex Gherghisan
-// Licensed under the MIT license
+/**
+ * @module html-truncate
+ * @exports htmlTruncate
+ *
+ * @copyright 2014 Alex Gherghisan
+ * @license MIT
+ */
 
 (function(root, factory) {
 	if (typeof define === 'function' && define.amd) {
@@ -11,12 +16,23 @@
 	}
 }(this, function factory() {
 
-	return function(html, maxLength, opt_addEllipsis) {
+	/**
+	 * Truncates a string to maxLength chars without destroying HTML tags.
+	 * Optionally adds ellipsis to the end of the string (this does not make the string larger than maxLength)
+	 *
+	 * @param {string} html - The HTML string to truncate. The function assumes valid HTML.
+	 * @param {number} maxLength - The max truncated length
+	 * @param {boolean} [opt_addEllipsis = false] - Add &hellip; at the end of the string.
+	 *
+	 * @returns {string}
+	 */
+	return function htmlTruncate(html, maxLength, opt_addEllipsis) {
 		var len = html.length;
 		if (len <= maxLength) {
 			return html; 
 		}
 
+		// leave room for ellipsis
 		if (opt_addEllipsis) {
 			--maxLength;
 		}
@@ -30,6 +46,7 @@
 				var tagClose = html.indexOf('>', i);
 
 				if (html[i + 1] === '/') {
+					// assume valid HTML
 					tagStack.pop();
 				} else {
 					tagStack.push(html.slice(i + 1, tagClose));
@@ -37,7 +54,8 @@
 
 				i = tagClose + 1;
 			} else {
-				++charCount; ++i;
+				++charCount;
+				++i;
 			}
 		}
 
@@ -45,6 +63,8 @@
 
 		for (var j = tagStack.length - 1; j >= 0; --j) {
 			var tag = tagStack[j];
+
+			// extract tagName from <tagName id="maybe">
 			var tagName;
 			var spaceIdx = tag.indexOf(' ');
 			if (spaceIdx > -1) {
