@@ -1,6 +1,6 @@
 {
   "name": "html-truncate",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "description": "truncates a html string without messing up the tags",
   "main": "html-truncate.js",
   "scripts": {

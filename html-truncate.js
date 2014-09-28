@@ -1,5 +1,6 @@
 /**
  * @module html-truncate
+ * @version 1.0.0
  * @exports htmlTruncate
  *
  * @copyright 2014 Alex Gherghisan
