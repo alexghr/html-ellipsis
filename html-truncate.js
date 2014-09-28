@@ -78,7 +78,7 @@
 			result += '</' + tagName + '>';
 		}
 
-		if (opt_addEllipsis) {
+		if (opt_addEllipsis && result.length < html.length) {
 			result += '&hellip;';
 		}
 
