@@ -7,6 +7,8 @@
  */
 
 (function(root, factory) {
+	'use strict';
+
 	if (typeof define === 'function' && define.amd) {
 		define([], factory);
 	} else if (typeof exports !== 'undefined') {
@@ -15,6 +17,7 @@
 		root.htmlTruncate = factory();
 	}
 }(this, function factory() {
+	'use strict';
 
 	/**
 	 * Truncates a string to maxLength chars without destroying HTML tags.
