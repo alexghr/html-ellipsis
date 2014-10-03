@@ -1,6 +1,6 @@
 {
   "name": "html-ellipsis",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "truncates a html string without messing up the tags",
   "main": "html-ellipsis.js",
   "scripts": {
