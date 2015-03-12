@@ -1,4 +1,4 @@
-# html-ellipsis &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[![Build Status](https://travis-ci.org/alexghr/html-ellipsis.svg)](https://travis-ci.org/alexghr/html-ellipsis)
+# html-ellipsis &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[![html-ellipsis API Documentation](https://www.omniref.com/js/npm/html-ellipsis.png)](https://www.omniref.com/js/npm/html-ellipsis)&nbsp;&nbsp;[![Build Status](https://travis-ci.org/alexghr/html-ellipsis.svg)](https://travis-ci.org/alexghr/html-ellipsis)
 
 Truncates a html string without messing up HTML tags
 
