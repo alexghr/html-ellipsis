@@ -73,7 +73,7 @@
 	return function htmlEllipsis(html, maxLength, opt_addEllipsis) {
 		var len = html.length;
 		if (len <= maxLength) {
-			return html; 
+			return html;
 		}
 
 		// leave room for ellipsis
@@ -86,7 +86,10 @@
 		var tagStack = [];
 
 		while (i < len && charCount < maxLength) {
-			if (html[i] === '<') {
+			var char = html.charAt(i);
+			var charCode = html.charCodeAt(i);
+
+			if (char === '<') {
 				var tag = extractTag(html, i);
 
 				// skip content between < and >
@@ -102,6 +105,12 @@
 					}
 				}
 			} else {
+				// if charCode is a high surrogate and if the string contains a low surrogate
+				// then count the pair as a single character
+				if (charCode >= 0xD800 && charCode <= 0xDBFF && i + 1 < len) {
+					++i;
+				}
+
 				++charCount;
 				++i;
 			}
@@ -120,4 +129,3 @@
 		return result;
 	};
 }));
-
