@@ -1,9 +1,9 @@
 /**
  * @module html-ellipsis
- * @version 1.0.0
+ * @version 1.1.1
  * @exports htmlEllipsis
  *
- * @copyright 2014 Alex Gherghisan
+ * @copyright 2015 Alex Gherghisan
  * @license MIT
  */
 

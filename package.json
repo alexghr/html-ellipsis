@@ -1,12 +1,12 @@
 {
   "name": "html-ellipsis",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "truncates a html string without messing up the tags",
   "main": "html-ellipsis.js",
   "scripts": {
     "test": "tape test/**/*.js",
     "lint": "jshint html-ellipsis.js",
-    "uglify": "uglifyjs html-ellipsis.js -m -c > html-ellipsis.min.js && du -b html-ellipsis.*js"
+    "uglify": "uglifyjs --mangle --compress --comments -- html-ellipsis.js > html-ellipsis.min.js && wc -c html-ellipsis.*js | head -2"
   },
   "repository": {
     "type": "git",
@@ -18,7 +18,7 @@
     "ellipsis",
     "ellipsize"
   ],
-  "author": "Alex Gherghisan <alex.gherghisan@gmail.com>",
+  "author": "Alex Gherghisan <alex@alexghr.me>",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/alexghr/html-ellipsis/issues"
