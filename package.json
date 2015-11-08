@@ -4,9 +4,9 @@
   "description": "truncates a html string without messing up the tags",
   "main": "html-ellipsis.js",
   "scripts": {
-    "test": "node test/truncate.js",
-    "lint": "node ./node_modules/.bin/jshint html-ellipsis.js",
-    "uglify": "node node_modules/.bin/uglifyjs html-ellipsis.js -m -c > html-ellipsis.min.js && du -b html-ellipsis.*js"
+    "test": "tape test/**/*.js",
+    "lint": "jshint html-ellipsis.js",
+    "uglify": "uglifyjs html-ellipsis.js -m -c > html-ellipsis.min.js && du -b html-ellipsis.*js"
   },
   "repository": {
     "type": "git",
