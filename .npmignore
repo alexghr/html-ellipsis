@@ -1,4 +1,5 @@
-test/
-.jshintrc
+src/
+out/test
 .travis.yml
-*.min.js
+.editorconfig
+yarn.lock

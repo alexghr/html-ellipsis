@@ -1,0 +1,13 @@
+{
+  "extends": "@alexghr/ts",
+  "compilerOptions": {
+    "rootDir": "./",
+    "outDir": "../../out/test",
+    "composite": true
+  },
+  "references": [
+    {
+      "path": "../lib"
+    }
+  ]
+}

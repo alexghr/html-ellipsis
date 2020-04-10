@@ -2,11 +2,13 @@
   "name": "html-ellipsis",
   "version": "1.1.1",
   "description": "truncates a html string without messing up the tags",
-  "main": "html-ellipsis.js",
+  "main": "./out/lib",
+  "types": "./out/lib",
   "scripts": {
-    "test": "tape test/**/*.js",
-    "lint": "jshint html-ellipsis.js",
-    "uglify": "uglifyjs --mangle --compress --comments -- html-ellipsis.js > html-ellipsis.min.js && wc -c html-ellipsis.*js | head -2"
+    "build": "tsc -b ./src/lib",
+    "pretest": "tsc -b ./src/test",
+    "test": "tape ./out/test/**/*.js",
+    "lint": "eslint ./src/**/*.ts"
   },
   "repository": {
     "type": "git",
@@ -24,9 +26,16 @@
     "url": "https://github.com/alexghr/html-ellipsis/issues"
   },
   "homepage": "https://github.com/alexghr/html-ellipsis",
+  "dependencies": {
+    "tslib": "^1.11.1"
+  },
   "devDependencies": {
-    "jshint": "^2.5.6",
+    "@alexghr/ts": "^0.1.0",
+    "@types/tape": "^4.2.34",
+    "@typescript-eslint/eslint-plugin": "^2.25.0",
+    "@typescript-eslint/parser": "^2.25.0",
+    "eslint": "^6.8.0",
     "tape": "^4.13.2",
-    "uglify-js": "^3.8.1"
+    "typescript": "^3.8.3"
   }
 }
