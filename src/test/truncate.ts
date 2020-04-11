@@ -1,99 +1,53 @@
-import test from 'tape';
-import { htmlEllipsis as truncate } from '../lib';
+import { htmlEllipsis } from '../lib';
 
-// sample strings
-var text = "1234567890"; // length = 10
-var html = "<p><span>1234</span><b>567<i>890</i></b></p>"; // length = 10 (not counting tags)
+describe('truncate', () => {
+  it.each([
+    ['123', 4, '123'],
+    ['123', 3, '123'],
+    ['123', 2, '12'],
+    ['123', 0, ''],
+    ['💩', 1, '💩'],
+    ['💩foo', 2, '💩f'],
+    [span('foo'), 4, span('foo')],
+    [span('foo'), 3, span('foo')],
+    [span('foo'), 2, span('fo')],
+    [span('foo'), 0, '']
+  ])('should truncate the text correctly', (str, len, expected) => {
+    expect(htmlEllipsis(str, len)).toEqual(expected);
+  });
 
-// regex used to find tags
-var tagRe = /(<.+?>)/g;
+  it.each([
+    ['<span>foo', 3, span('foo')],
+    [span('<b>foo'), 3, span('<b>foo</b>')],
+    // ['<span>foo<br/></span>', 3, '<span>foo<br></span>']
+  ])('should handle malformed html', (str, len, expected) => {
+    expect(htmlEllipsis(str, len)).toEqual(expected);
+  });
 
-test('should return same string if length = maxLength', function (t) {
-  t.plan(4);
-  t.equals(truncate(text, text.length), text, 'no tags');
-  t.equals(truncate(html, html.length), html, 'with tags');
-  t.equals(truncate(text, text.length, true), text, 'no tags, ellipsis = true');
-  t.equals(truncate(html, html.length, true), html, 'with tags, ellipsis = true');
-});
-
-test('should return same string if length < maxLength', function (t) {
-  t.plan(4);
-  t.equals(truncate(text, text.length + 1), text, 'no tags');
-  t.equals(truncate(html, html.length + 1), html, 'with tags');
-  t.equals(truncate(text, text.length + 1, true), text, 'no tags, ellipsis = true');
-  t.equals(truncate(html, html.length + 1, true), html, 'with tags, ellipsis = true');
-});
-
-test('should truncate a normal text without tags', function (t) {
-  var length = 5;
-  var result = truncate(text, length);
-
-  t.plan(2);
-  t.equals(result.length, length, 'result should have the expected length');
-  t.equals(result, text.slice(0, length), 'result should be a prefix of text');
-});
-
-test('should truncate a html string', function (t) {
-  var length = 5;
-  var result = truncate(html, length);
-  var textContent = result.replace(tagRe, '');
-  var originalTextContent = result.replace(tagRe, '');
-
-  t.plan(2);
-  t.equals(textContent.length, length, 'result textContent should have expected length');
-  t.equals(textContent, originalTextContent.slice(0, length), 'result textContent should be a prefix of original textContent');
-});
-
-test('should close open tags when truncating a html string', function (t) {
-  var length = 5;
-  var result = truncate(html, length);
-  var splits = result.split(tagRe);
-
-  // tags are on odd indices
-  var tags = splits.filter(function (split, i) { return i % 2 === 1; });
-
-  t.plan(1);
-  t.doesNotThrow(function () {
-    const tagStack: Array<string> = [];
-    tags.forEach(function (tag) {
-      var tagName;
-      // end tag
-      if (tag.slice(0, 2) === '</') {
-        // extract tag from </tag>
-        tagName = tag.slice(2, -1);
-
-        // last pushed tag on the stack
-        var tip = tagStack[tagStack.length - 1];
-        if (tip === tagName) {
-          tagStack.pop();
-        } else {
-          throw new Error('Mismatched tags: ' + tip + ' ' + tagName);
-        }
-      } else {
-        // extract tag from <tag id="foo">
-        var spaceIdx = tag.indexOf(' ');
-        if (spaceIdx > -1) {
-          tagName = tag.slice(1, spaceIdx);
-        } else {
-          tagName = tag.slice(1, -1);
-        }
-        tagStack.push(tagName);
-      }
+  describe('ellipsis', () => {
+    const tests = [
+      ['123', 2, '1'],
+      ['💩foo', 2, '💩'],
+      ['<span>foo</span>', 2, 'f']
+    ] as const;
+    it.each(tests)('should keeps space for ellipsis', (str, len, expected) => {
+      expect(htmlEllipsis(str, len, true)).toMatch(expected);
     });
 
-    if (tagStack.length > 0) {
-      throw new Error('Some tags got left opened: ' + JSON.stringify(tagStack));
-    }
-  }, 'tags are properly closed');
+    it.each(tests)('adds &hellip; at the end', (str, len) => {
+      expect(htmlEllipsis(str, len, true)).toMatch(/&hellip;$/);
+    });
+  });
+
+  it('should handle surrogate pairs', () => {
+    // the high surrogate of 💩
+    expect(htmlEllipsis('\uD83D', 1)).toEqual('\uD83D');
+    // 💩 
+    expect(htmlEllipsis('\uD83D\uDCA9', 1)).toEqual('💩');
+  });
 });
 
-test('should add &hellip; when truncating', function (t) {
-  var length = 5;
-  var hellip = '&hellip;';
-  var resultText = truncate(text, length, true);
-  var resultHtml = truncate(html, length, true);
 
-  t.plan(2);
-  t.equals(resultText.slice(-hellip.length), hellip, 'no tags');
-  t.equals(resultHtml.slice(-hellip.length), hellip, 'with tags');
-});
+function span(inner: string): string {
+  return `<span>${inner}</span>`;
+}

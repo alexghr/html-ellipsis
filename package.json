@@ -7,7 +7,7 @@
   "scripts": {
     "build": "tsc -b ./src/lib",
     "pretest": "tsc -b ./src/test",
-    "test": "tape ./out/test/**/*.js",
+    "test": "jest",
     "lint": "eslint ./src/**/*.ts"
   },
   "repository": {
@@ -31,11 +31,11 @@
   },
   "devDependencies": {
     "@alexghr/ts": "^0.1.0",
-    "@types/tape": "^4.2.34",
+    "@types/jest": "^25.2.1",
     "@typescript-eslint/eslint-plugin": "^2.25.0",
     "@typescript-eslint/parser": "^2.25.0",
     "eslint": "^6.8.0",
-    "tape": "^4.13.2",
+    "jest": "^25.3.0",
     "typescript": "^3.8.3"
   }
 }
