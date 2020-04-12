@@ -3,7 +3,7 @@
  * @version 2.0.0
  * @exports htmlEllipsis
  *
- * @copyright 2015-2020 Alex Gherghisan
+ * @copyright 2014-2020 Alex Gherghisan
  * @license MIT
  */
 
