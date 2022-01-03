@@ -1,6 +1,6 @@
 {
   "name": "html-ellipsis",
-  "version": "1.1.1",
+  "version": "2.0.0",
   "description": "truncates a html string without messing up the tags",
   "main": "./out/lib",
   "types": "./out/lib",
