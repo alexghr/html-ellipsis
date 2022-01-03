@@ -1,4 +1,5 @@
 {
+  "root": true,
   "env": {
     "browser": true,
     "es6": true,
@@ -22,5 +23,13 @@
   ],
   "rules": {
     "semi": 1
-  }
+  },
+  "overrides": [
+    {
+      "files": "*.cjs",
+      "rules": {
+        "@typescript-eslint/no-var-requires": "off"
+      }
+    }
+  ]
 }
