@@ -1263,26 +1263,10 @@
     semver "^7.1.2"
     tempy "^3.0.0"
 
-"@semantic-release/release-notes-generator@^11.0.2":
-  version "11.0.7"
-  resolved "https://registry.yarnpkg.com/@semantic-release/release-notes-generator/-/release-notes-generator-11.0.7.tgz#2193b8aa6b8b40297b6cbc5156bc9a7e5cdb9bbd"
-  integrity sha512-T09QB9ImmNx7Q6hY6YnnEbw/rEJ6a+22LBxfZq+pSAXg/OL/k0siwEm5cK4k1f9dE2Z2mPIjJKKohzUm0jbxcQ==
-  dependencies:
-    conventional-changelog-angular "^6.0.0"
-    conventional-changelog-writer "^6.0.0"
-    conventional-commits-filter "^4.0.0"
-    conventional-commits-parser "^5.0.0"
-    debug "^4.0.0"
-    get-stream "^7.0.0"
-    import-from "^4.0.0"
-    into-stream "^7.0.0"
-    lodash-es "^4.17.21"
-    read-pkg-up "^10.0.0"
-
-"@semantic-release/release-notes-generator@^12.0.0-beta.2":
-  version "12.0.0-beta.3"
-  resolved "https://registry.yarnpkg.com/@semantic-release/release-notes-generator/-/release-notes-generator-12.0.0-beta.3.tgz#eb65d10174a8ea7c4562989bf5dd900c284e1c66"
-  integrity sha512-87tr1FqBTCDIyfiqPTJrRU/aANzaekmhtgBV/nm2D3WCDp6Wr9PydsFOTSTL+H7LZZKDZANsRv9UGRSBEPvtRQ==
+"@semantic-release/release-notes-generator@^12.0.0", "@semantic-release/release-notes-generator@^12.0.0-beta.2":
+  version "12.0.0"
+  resolved "https://registry.yarnpkg.com/@semantic-release/release-notes-generator/-/release-notes-generator-12.0.0.tgz#1882d6d797e1176b9f836caf7ed787325c8ddb4b"
+  integrity sha512-m7Ds8ComP1KJgA2Lke2xMwE1TOOU40U7AzP4lT8hJ2tUAeicziPz/1GeDFmRkTOkMFlfHvE6kuvMkvU+mIzIDQ==
   dependencies:
     conventional-changelog-angular "^7.0.0"
     conventional-changelog-writer "^7.0.0"
@@ -2253,19 +2237,6 @@ conventional-changelog-angular@^7.0.0:
   dependencies:
     compare-func "^2.0.0"
 
-conventional-changelog-writer@^6.0.0:
-  version "6.0.1"
-  resolved "https://registry.yarnpkg.com/conventional-changelog-writer/-/conventional-changelog-writer-6.0.1.tgz#d8d3bb5e1f6230caed969dcc762b1c368a8f7b01"
-  integrity sha512-359t9aHorPw+U+nHzUXHS5ZnPBOizRxfQsWT5ZDHBfvfxQOAik+yfuhKXG66CN5LEWPpMNnIMHUTCKeYNprvHQ==
-  dependencies:
-    conventional-commits-filter "^3.0.0"
-    dateformat "^3.0.3"
-    handlebars "^4.7.7"
-    json-stringify-safe "^5.0.1"
-    meow "^8.1.2"
-    semver "^7.0.0"
-    split "^1.0.1"
-
 conventional-changelog-writer@^7.0.0:
   version "7.0.1"
   resolved "https://registry.yarnpkg.com/conventional-changelog-writer/-/conventional-changelog-writer-7.0.1.tgz#e64ef74fa8e773cab4124af217f3f02b29eb0a9c"
@@ -2348,11 +2319,6 @@ cssesc@^3.0.0:
   version "3.0.0"
   resolved "https://registry.yarnpkg.com/cssesc/-/cssesc-3.0.0.tgz#37741919903b868565e1c09ea747445cd18983ee"
   integrity sha512-/Tb/JcjK111nNScGob5MNtsntNM1aCNUDipB/TkwZFhyDrrE47SOx/18wF2bbjgc3ZzCSKW1T5nt5EbFoAz/Vg==
-
-dateformat@^3.0.3:
-  version "3.0.3"
-  resolved "https://registry.yarnpkg.com/dateformat/-/dateformat-3.0.3.tgz#a6e37499a4d9a9cf85ef5872044d62901c9889ae"
-  integrity sha512-jyCETtSl3VMZMWeRo7iY1FL19ges1t55hMo5yaam4Jrsm5EPL89UQkoQRyiI+Yf4k8r2ZpdngkV8hr1lIdjb3Q==
 
 debug@4, debug@^4.0.0, debug@^4.1.0, debug@^4.1.1, debug@^4.3.2, debug@^4.3.3, debug@^4.3.4:
   version "4.3.4"
@@ -6124,13 +6090,6 @@ split2@~1.0.0:
   dependencies:
     through2 "~2.0.0"
 
-split@^1.0.1:
-  version "1.0.1"
-  resolved "https://registry.yarnpkg.com/split/-/split-1.0.1.tgz#605bd9be303aa59fb35f9229fbea0ddec9ea07d9"
-  integrity sha512-mTyOoPbrivtXnwnIxZRFYRrPNtEFKlpB2fvjSnCQUiAA6qAZzqwna5envK4uk6OIeP17CsdF3rSBGYVBsU0Tkg==
-  dependencies:
-    through "2"
-
 sprintf-js@~1.0.2:
   version "1.0.3"
   resolved "https://registry.yarnpkg.com/sprintf-js/-/sprintf-js-1.0.3.tgz#04e6926f662895354f3dd015203633b857297e2c"
@@ -6391,7 +6350,7 @@ through2@~2.0.0:
     readable-stream "~2.3.6"
     xtend "~4.0.1"
 
-through@2, "through@>=2.2.7 <3":
+"through@>=2.2.7 <3":
   version "2.3.8"
   resolved "https://registry.yarnpkg.com/through/-/through-2.3.8.tgz#0dd4c9ffaabc357960b1b724115d7e0e86a2e1f5"
   integrity sha1-DdTJ/6q8NXlgsbckEV1+Doai4fU=
