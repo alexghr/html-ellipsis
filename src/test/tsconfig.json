@@ -3,10 +3,7 @@
   "compilerOptions": {
     "rootDir": "./",
     "outDir": "../../out/test",
-    "composite": true,
-    "types": [
-      "jest"
-    ]
+    "composite": true
   },
   "references": [
     {
