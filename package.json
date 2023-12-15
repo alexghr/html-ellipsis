@@ -7,7 +7,7 @@
   "scripts": {
     "build": "tsc -b ./src/lib",
     "pretest": "tsc -b ./src/test",
-    "test": "node out/test/truncate.js",
+    "test": "node --test out/test/*.js",
     "lint": "eslint ./src/**/*.ts",
     "release": "semantic-release"
   },
