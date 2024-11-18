@@ -1,3 +1,5 @@
+## [2.0.14](https://github.com/alexghr/html-ellipsis/compare/v2.0.13...v2.0.14) (2024-11-18)
+
 ## [2.0.13](https://github.com/alexghr/html-ellipsis/compare/v2.0.12...v2.0.13) (2024-11-04)
 
 ## [2.0.12](https://github.com/alexghr/html-ellipsis/compare/v2.0.11...v2.0.12) (2024-10-21)
